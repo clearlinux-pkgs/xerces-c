@@ -6,7 +6,7 @@
 #
 Name     : xerces-c
 Version  : 3.2.2
-Release  : 2
+Release  : 3
 URL      : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
 Source0  : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
 Source99 : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz.asc
@@ -69,7 +69,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543845531
+export SOURCE_DATE_EPOCH=1543848046
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -81,7 +85,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1543845531
+export SOURCE_DATE_EPOCH=1543848046
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xerces-c
 cp LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/LICENSE
