@@ -1,0 +1,20 @@
+Configure miss: CoreServices/CoreServices.h usability
+Configure miss: CoreServices/CoreServices.h presence
+Configure miss: CoreServices/CoreServices.h
+Configure miss: machine/endian.h usability
+Configure miss: machine/endian.h presence
+Configure miss: machine/endian.h
+Configure miss: stdbool.h that conforms to C99
+Configure miss: _Bool
+Configure miss: wcsupr
+Configure miss: wcslwr
+Configure miss: wcsnicmp
+Configure miss: wcsicmp
+Configure miss: if iconv uses const pointers
+Configure miss: curl_multi_init in -lcurl
+Configure miss: whether we can support the libcurl-based NetAccessor
+Configure miss: whether the Windows SDK is available and using wchar_t as wide string
+Configure miss: whether we can support wchar_t XMLCh
+Configure miss: whether the compiler chokes on a placement operator delete
+Configure miss: intrin.h usability
+Configure miss: whether the compiler has the CPUID intrinsic
