@@ -6,14 +6,15 @@
 #
 Name     : xerces-c
 Version  : 3.2.2
-Release  : 3
+Release  : 4
 URL      : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
 Source0  : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
 Source99 : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz.asc
-Summary  : Validating XML parser library for C++
+Summary  : A validating XML parser written in a portable subset of C++
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: xerces-c-bin = %{version}-%{release}
+Requires: xerces-c-lib = %{version}-%{release}
 Requires: xerces-c-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : curl-dev
@@ -46,11 +47,21 @@ bin components for the xerces-c package.
 %package dev
 Summary: dev components for the xerces-c package.
 Group: Development
+Requires: xerces-c-lib = %{version}-%{release}
 Requires: xerces-c-bin = %{version}-%{release}
 Provides: xerces-c-devel = %{version}-%{release}
 
 %description dev
 dev components for the xerces-c package.
+
+
+%package lib
+Summary: lib components for the xerces-c package.
+Group: Libraries
+Requires: xerces-c-license = %{version}-%{release}
+
+%description lib
+lib components for the xerces-c package.
 
 
 %package license
@@ -69,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543848046
+export SOURCE_DATE_EPOCH=1549555947
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
@@ -85,7 +96,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1543848046
+export SOURCE_DATE_EPOCH=1549555947
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xerces-c
 cp LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/LICENSE
@@ -584,9 +595,12 @@ cp NOTICE %{buildroot}/usr/share/package-licenses/xerces-c/NOTICE
 /usr/include/xercesc/xinclude/XIncludeDOMDocumentProcessor.hpp
 /usr/include/xercesc/xinclude/XIncludeLocation.hpp
 /usr/include/xercesc/xinclude/XIncludeUtils.hpp
+/usr/lib64/pkgconfig/xerces-c.pc
+
+%files lib
+%defattr(-,root,root,-)
 /usr/lib64/libxerces-c-3.2.so
 /usr/lib64/libxerces-c.so
-/usr/lib64/pkgconfig/xerces-c.pc
 
 %files license
 %defattr(0644,root,root,0755)
