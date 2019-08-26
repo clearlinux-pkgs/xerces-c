@@ -6,17 +6,19 @@
 #
 Name     : xerces-c
 Version  : 3.2.2
-Release  : 4
+Release  : 5
 URL      : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
 Source0  : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
-Source99 : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz.asc
-Summary  : A validating XML parser written in a portable subset of C++
+Source1 : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz.asc
+Summary  : Validating XML parser library for C++
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: xerces-c-bin = %{version}-%{release}
 Requires: xerces-c-lib = %{version}-%{release}
 Requires: xerces-c-license = %{version}-%{release}
+BuildRequires : apache-ant
 BuildRequires : buildreq-cmake
+BuildRequires : buildreq-mvn
 BuildRequires : curl-dev
 BuildRequires : icu4c-dev
 BuildRequires : nghttp2-dev
@@ -50,6 +52,7 @@ Group: Development
 Requires: xerces-c-lib = %{version}-%{release}
 Requires: xerces-c-bin = %{version}-%{release}
 Provides: xerces-c-devel = %{version}-%{release}
+Requires: xerces-c = %{version}-%{release}
 
 %description dev
 dev components for the xerces-c package.
@@ -79,24 +82,25 @@ license components for the xerces-c package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1549555947
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1566841152
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1549555947
+export SOURCE_DATE_EPOCH=1566841152
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xerces-c
 cp LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/LICENSE
