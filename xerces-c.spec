@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x378B845402277962 (cantor.2@osu.edu)
 #
 Name     : xerces-c
-Version  : 3.2.2
-Release  : 6
-URL      : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
-Source0  : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz
-Source1  : https://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-3.2.2.tar.xz.asc
+Version  : 3.2.3
+Release  : 7
+URL      : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
+Source0  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
+Source1  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
 Summary  : Validating XML parser library for C++
 Group    : Development/Tools
 License  : Apache-2.0
@@ -33,8 +33,8 @@ manipulating, and validating XML documents.
 
 The parser provides high performance, modularity, and scalability. Source
 code, samples and API documentation are provided with the parser. For
-portability, care has been taken to make minimal use of templates, no RTTI,
-and minimal use of #ifdefs.
+portability, care has been taken to make minimal use of templates and
+minimal use of #ifdefs.
 
 %package bin
 Summary: bin components for the xerces-c package.
@@ -75,19 +75,19 @@ license components for the xerces-c package.
 
 
 %prep
-%setup -q -n xerces-c-3.2.2
-cd %{_builddir}/xerces-c-3.2.2
+%setup -q -n xerces-c-3.2.3
+cd %{_builddir}/xerces-c-3.2.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582836001
+export SOURCE_DATE_EPOCH=1587077706
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export FFLAGS="$FFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -100,11 +100,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1582836001
+export SOURCE_DATE_EPOCH=1587077706
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xerces-c
-cp %{_builddir}/xerces-c-3.2.2/LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/2b8b815229aa8a61e483fb4ba0588b8b6c491890
-cp %{_builddir}/xerces-c-3.2.2/NOTICE %{buildroot}/usr/share/package-licenses/xerces-c/9f30e11a37811f6763d6bd772df410c1fb72b94b
+cp %{_builddir}/xerces-c-3.2.3/LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+cp %{_builddir}/xerces-c-3.2.3/NOTICE %{buildroot}/usr/share/package-licenses/xerces-c/9f30e11a37811f6763d6bd772df410c1fb72b94b
 %make_install
 
 %files
