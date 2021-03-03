@@ -6,7 +6,7 @@
 #
 Name     : xerces-c
 Version  : 3.2.3
-Release  : 7
+Release  : 8
 URL      : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source0  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source1  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
