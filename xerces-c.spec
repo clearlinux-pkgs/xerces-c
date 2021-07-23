@@ -6,10 +6,10 @@
 #
 Name     : xerces-c
 Version  : 3.2.3
-Release  : 8
-URL      : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
-Source0  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
-Source1  : https://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
+Release  : 9
+URL      : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
+Source0  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
+Source1  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
 Summary  : Validating XML parser library for C++
 Group    : Development/Tools
 License  : Apache-2.0
@@ -83,12 +83,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587077706
+export SOURCE_DATE_EPOCH=1627019597
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FCFLAGS="$FFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export FFLAGS="$FFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
-export CXXFLAGS="$CXXFLAGS -O3 -falign-functions=32 -fno-lto -fno-math-errno -fno-semantic-interposition -fno-trapping-math "
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -97,10 +97,10 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1587077706
+export SOURCE_DATE_EPOCH=1627019597
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xerces-c
 cp %{_builddir}/xerces-c-3.2.3/LICENSE %{buildroot}/usr/share/package-licenses/xerces-c/2b8b815229aa8a61e483fb4ba0588b8b6c491890
