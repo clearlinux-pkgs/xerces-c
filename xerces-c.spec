@@ -6,7 +6,7 @@
 #
 Name     : xerces-c
 Version  : 3.2.3
-Release  : 9
+Release  : 10
 URL      : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source0  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source1  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
@@ -16,7 +16,6 @@ License  : Apache-2.0
 Requires: xerces-c-bin = %{version}-%{release}
 Requires: xerces-c-lib = %{version}-%{release}
 Requires: xerces-c-license = %{version}-%{release}
-BuildRequires : apache-ant
 BuildRequires : buildreq-cmake
 BuildRequires : curl-dev
 BuildRequires : icu4c-dev
