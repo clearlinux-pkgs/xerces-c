@@ -6,7 +6,7 @@
 #
 Name     : xerces-c
 Version  : 3.2.3
-Release  : 11
+Release  : 12
 URL      : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source0  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz
 Source1  : https://mirrors.advancedhosters.com/apache/xerces/c/3/sources/xerces-c-3.2.3.tar.xz.asc
