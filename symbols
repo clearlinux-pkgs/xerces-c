@@ -2072,6 +2072,7 @@ libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser17handleElementPSVIEPKDsS2
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18createCDATASectionEPKDsm
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18endEntityReferenceERKNS_13XMLEntityDeclE
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18setCalculateSrcOfsEb
+libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18setDisallowDoctypeEb
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18setLoadExternalDTDEb
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser18setSecurityManagerEPNS_15SecurityManagerE
 libxerces-c-3.2.so:_ZN11xercesc_3_217AbstractDOMParser19ignorableWhitespaceEPKDsmb
@@ -3967,6 +3968,11 @@ libxerces-c-3.2.so:_ZN11xercesc_3_29OpFactoryC1EPNS_13MemoryManagerE
 libxerces-c-3.2.so:_ZN11xercesc_3_29OpFactoryC2EPNS_13MemoryManagerE
 libxerces-c-3.2.so:_ZN11xercesc_3_29OpFactoryD1Ev
 libxerces-c-3.2.so:_ZN11xercesc_3_29OpFactoryD2Ev
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10ReaderData13releaseEntityEv
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10ReaderDataC1EPNS_9XMLReaderEPNS_13XMLEntityDeclEb
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10ReaderDataC2EPNS_9XMLReaderEPNS_13XMLEntityDeclEb
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10ReaderDataD1Ev
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10ReaderDataD2Ev
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr10pushReaderEPNS_9XMLReaderEPNS_13XMLEntityDeclE
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr11getNextCharEv
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr11skipIfQuoteERDs
@@ -3985,6 +3991,7 @@ libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr16cleanStackBackToEm
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr16getCurrentEntityEv
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr16skipQuotedStringEDs
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr18createIntEntReaderEPKDsNS_9XMLReader7RefFromENS3_5TypesES2_mbbm
+libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr21pushReaderAdoptEntityEPNS_9XMLReaderEPNS_13XMLEntityDeclEb
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr5resetEv
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr9getSpacesERNS_9XMLBufferE
 libxerces-c-3.2.so:_ZN11xercesc_3_29ReaderMgr9popReaderEv
@@ -4041,6 +4048,7 @@ libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser17doctypeWhitespaceEPKDsm
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser17setEntityResolverEPNS_14EntityResolverE
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18endEntityReferenceERKNS_13XMLEntityDeclE
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18setCalculateSrcOfsEb
+libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18setDisallowDoctypeEb
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18setDocumentHandlerEPNS_15DocumentHandlerE
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18setIgnoreCachedDTDEb
 libxerces-c-3.2.so:_ZN11xercesc_3_29SAXParser18setInputBufferSizeEm
@@ -4780,6 +4788,7 @@ libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser15getDoNamespacesEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser15getLowWaterMarkEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser17isDocumentAdoptedEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser18getCalculateSrcOfsEv
+libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser18getDisallowDoctypeEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser18getLoadExternalDTDEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser18getSecurityManagerEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_217AbstractDOMParser19getValidationSchemeEv
@@ -5354,6 +5363,9 @@ libxerces-c-3.2.so:_ZNK11xercesc_3_29IC_KeyRef12getProtoTypeEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29IC_KeyRef14isSerializableEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29IC_Unique12getProtoTypeEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29IC_Unique14isSerializableEv
+libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr10ReaderData16getEntityAdoptedEv
+libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr10ReaderData9getEntityEv
+libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr10ReaderData9getReaderEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr11getPublicIdEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr11getSystemIdEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29ReaderMgr13getLineNumberEv
@@ -5375,6 +5387,7 @@ libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser13getLoadSchemaEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser15getDoNamespacesEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser15getLowWaterMarkEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser18getCalculateSrcOfsEv
+libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser18getDisallowDoctypeEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser18getIgnoreCachedDTDEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser18getLoadExternalDTDEv
 libxerces-c-3.2.so:_ZNK11xercesc_3_29SAXParser18getSecurityManagerEv
